@@ -31,13 +31,7 @@ if maze_number == 3:
             show_progress()
             print("""
     You may proceed to square 1, square 3, or square 5. What do you pick?""")
-            x = input("1, 3 or 5?")
-            if x == "1":
-                location = 1
-            if x == "3":
-                location = 3
-            if x == "5":
-                location = 5
+            location = int(input("1, 3 or 5?"))
         if location == 3:
             show_progress()
             print("""

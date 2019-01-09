@@ -17,7 +17,6 @@ print(f"""Hello, {name}, and welcome to my scary forest of horrors!
 To escape pursuit by your enemies, you must make it through the scary forest.
 Go forth, {name}, you wary traveler.""")
 
-
 location = 1
 
 while location != 8:
@@ -59,8 +58,13 @@ while location != 8:
                 print("The birds take you far across the skies. You land in a meadow")
                 location = 8
             elif fly_with_the_birds.lower() == "n":
-                print("The birds are offended and make you go down a fireman's pole.")
+                print("The birds are offended and make you go down a fireman's pole into square 2")
                 location = 2
+    elif location == 4:
+        print("You are at the foot of a tall mountain. You may attempt the climb to square 7 or return to suare 5.")
+        while location != 5 and location != 7:
+            location = int(input("Climb to 7 or return to 5?"))
+
 
 
 print("Congratulations! You have successfully made it out of the maze of horrors!")

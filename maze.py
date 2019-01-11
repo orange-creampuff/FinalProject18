@@ -3,11 +3,15 @@ import random
 
 def show_progress():
     """Show how you are doing"""
-    print(f"""The arrangement of squares is 1 2 3
+    print(f"""
+
+The arrangement of squares is 1 2 3
                               4 5 6
                               7 8 9.
     You may move to any adjacent square, unless the path is blocked.
-    You are in square {location}. The exit is in square 8.""")
+    You are in square {location}. The exit is in square 8.
+
+    """)
 
 #Creating your character
 name = input("What shall I call you? ")
@@ -19,22 +23,35 @@ Go forth, {name}, you wary traveler.""")
 
 location = 1
 numberoftheday = random.randint(1,9)
+snake_charmer = False
 
 while location != 8:
-    show_progress()
     if location == 1:
-        print("A cobra blocks the path to square 4. You must proceed to square 2.")
-        location = 2
+        yes_or_no = "Undefined"
+        while yes_or_no != "y" and yes_or_no != "n":
+            if snake_charmer:
+                yes_or_no = input("A cobra block the path to square 4. You may charm the snake. Do you? Type y or n ")
+            if yes_or_no == "y":
+                print("The snake gives way and you proceed on the path.")
+                location = 4
+            else:
+                yes_or_no = "n"
+        if yes_or_no == "n":
+            print("A cobra blocks the path to square 4. You must proceed to square 2.")
+            location = 2
     elif location == 2:
+        show_progress()
         print("You may proceed to square 1, square 3, or square 5. What do you pick?")
         location = int(input("Type 1, 3 or 5. "))
     elif location == 3:
-        print("A gate slams behind you. You may not go back to square 2. You must proceed to square 6")
+        print("A gate slams behind you. You may not go back to square 2. A wizard gives you the snake charmer. You must proceed to square 6")
+        snake_charmer = True
         location = 6
     elif location == 6:
         print("You fall into a sewer and float back to square 1")
         location = 1
     elif location == 5:
+        show_progress()
         print("""
         You are soo close to the exit.
         The only thing now stands between you and the exit is a mighty muscular ogre""")
@@ -62,10 +79,12 @@ while location != 8:
                 print("The birds are offended and make you go down a fireman's pole into square 2")
                 location = 2
     elif location == 4:
+        show_progress()
         print("You are at the foot of a tall mountain. You may attempt the climb to square 7 or return to suare 5.")
         while location != 5 and location != 7:
-            location = int(input("Climb to 7 or return to 5 ?"))
+            location = int(input("Climb to 7 or return to 5? "))
     elif location == 7:
+        show_progress()
         print("""You are getting close and things are getting interesting.
         You are at the summit. Unfortunately, attempting the descent into the meadow is not possible right now.""")
         sleep_eagle = "Undefined"

@@ -21,37 +21,38 @@ print(f"""Hello, {name}, and welcome to my scary forest of horrors!
 To escape pursuit by your enemies, you must make it through the scary forest.
 Go forth, {name}, you wary traveler.""")
 
-location = 1
-numberoftheday = random.randint(1,9)
+location = "1"
+numberoftheday = random.randint(1,3)
 snake_charmer = False
 ogre_sleeping = True
 
-while location != 8:
-    if location == 1:
+while location != "8":
+    if location == "1":
         yes_or_no = "Undefined"
-        while yes_or_no != "y" and yes_or_no != "n":
-            if snake_charmer:
+        if snake_charmer:
+            while yes_or_no != "y" and yes_or_no != "n":
                 yes_or_no = input("A cobra block the path to square 4. You may charm the snake. Do you? Type y or n ")
-            if yes_or_no == "y":
-                print("The snake gives way and you proceed on the path.")
-                location = 4
-            else:
-                yes_or_no = "n"
-        if yes_or_no == "n":
+        elif not snake_charmer:
+            yes_or_no = "n"
+        if yes_or_no == "y":
+            print("The snake gives way and you proceed on the path.")
+            location = "4"
+        elif yes_or_no == "n":
             print("A cobra blocks the path to square 4. You must proceed to square 2.")
-            location = 2
-    elif location == 2:
+            location = "2"
+    elif location == "2":
         show_progress()
         print("You may proceed to square 1, square 3, or square 5. What do you pick?")
-        location = int(input("Type 1, 3 or 5. "))
-    elif location == 3:
-        print("A gate slams behind you. You may not go back to square 2. A wizard gives you the snake charmer. You must proceed to square 6")
+        while location != "1" and location != "3" and location != "5":
+            location = input("Type 1, 3 or 5. ")
+    elif location == "3":
+        print("A gate slams behind you. You may not go back to square 2. You must proceed to square 6")
+        location = "6"
+    elif location == "6":
+        print("A wizard gives you the snake charmer. Then you fall into a sewer and float back to square 1")
         snake_charmer = True
-        location = 6
-    elif location == 6:
-        print("You fall into a sewer and float back to square 1")
-        location = 1
-    elif location == 5:
+        location = "1"
+    elif location == "5":
         show_progress()
         print("""
         You are soo close to the exit.
@@ -80,16 +81,16 @@ while location != 8:
             fly_with_the_birds = input("We are going on a trip across the forest in the skies. Do you join us? Type y or n ")
             if fly_with_the_birds.lower() == "y":
                 print("The birds take you far across the skies. You land in a meadow")
-                location = 8
+                location = "8"
             elif fly_with_the_birds.lower() == "n":
                 print("The birds are offended and make you go down a fireman's pole into square 2")
-                location = 2
-    elif location == 4:
+                location = "2"
+    elif location == "4":
         show_progress()
         print("You are at the foot of a tall mountain. You may attempt the climb to square 7 or return to suare 5.")
-        while location != 5 and location != 7:
-            location = int(input("Climb to 7 or return to 5? "))
-    elif location == 7:
+        while location != "5" and location != "7":
+            location = input("Climb to 7 or return to 5? ")
+    elif location == "7":
         show_progress()
         print("""You are getting close and things are getting interesting.
         You are at the summit. Unfortunately, attempting the descent into the meadow is not possible right now.""")
@@ -103,18 +104,18 @@ while location != 8:
             location = "2S"
         elif sleep_eagle.lower() == "n":
             print("You are forced to descend the mountain to 4 or swim across the mountain lake to square 9.")
-            while location != 4 and location != 9:
-                location = int(input("Descend to 4 or brave the risky waters to 9? Type 4 or 9 "))
-    elif location == 9:
+            while location != "4" and location != "9":
+                location = input("Descend to 4 or brave the risky waters to 9? Type 4 or 9 ")
+    elif location == "9":
         print("A programmer controls access to the gate to the meadow. He does not like you.")
-        your_choice = int(input("If you guess the number I am thinking of, I will program this gate to open. Type an integer from 1 to 9. "))
+        your_choice = int(input("If you guess the number I am thinking of, I will program this gate to open. Type an integer from 1 to 3. "))
         if your_choice == numberoftheday:
             print("Curses, should have chosen a different number today. Well, here you go.")
-            location = 8
+            location = "8"
         else:
             print("""HAHAHAHAHA! Come back another time!
             The programmer pushes you down the mountain to square 6.""")
-            location = 6
+            location = "6"
 
 
 

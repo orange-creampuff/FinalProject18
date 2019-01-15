@@ -24,6 +24,7 @@ Go forth, {name}, you wary traveler.""")
 location = 1
 numberoftheday = random.randint(1,9)
 snake_charmer = False
+ogre_sleeping = True
 
 while location != 8:
     if location == 1:
@@ -55,16 +56,21 @@ while location != 8:
         print("""
         You are soo close to the exit.
         The only thing now stands between you and the exit is a mighty muscular ogre""")
-        ogre_battle = "Undefined"
-        while ogre_battle.lower() != "y" and ogre_battle.lower() != "n":
-            ogre_battle = input("Do you battle the ogre? Type y or n ")
-            if ogre_battle.lower() == "y":
-                print("""The hulking ogre gives you a massive beating. You fall asleep and fly through the skies above the forest.
+        if not ogre_sleeping:
+            ogre_battle = "Undefined"
+            while ogre_battle.lower() != "y" and ogre_battle.lower() != "n":
+                ogre_battle = input("Do you battle the ogre? Type y or n ")
+                if ogre_battle.lower() == "y":
+                    print("""The hulking ogre gives you a massive beating. You fall asleep and fly through the skies above the forest.
 
-                You wake up on a cloud, seemingly above square 2.""")
-                location = "2S"
-            elif ogre_battle.lower() == "n":
-                location = int(input("You may proceed to squares 2, 4, or 6. Which will it be? "))
+                    You wake up on a cloud, seemingly above square 2.""")
+                    location = "2S"
+                elif ogre_battle.lower() == "n":
+                    location = int(input("You may proceed to squares 2, 4, or 6. Which will it be? "))
+        else:
+            print("The ogre is sleeping and will not fight you this time.")
+            location = int(input("You may proceed to squares 2, 4, or 6. Which will it be? "))
+            ogre_sleeping = False
     elif location == "2S":
         print("""
         Welcome chosen one. We have been awaiting you.

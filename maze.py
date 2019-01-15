@@ -67,10 +67,12 @@ while location != "8":
                     You wake up on a cloud, seemingly above square 2.""")
                     location = "2S"
                 elif ogre_battle.lower() == "n":
-                    location = int(input("You may proceed to squares 2, 4, or 6. Which will it be? "))
+                    while location != "2" and location != "4" and location != "6":
+                        location = input("You may proceed to squares 2, 4, or 6. Which will it be? ")
         else:
             print("The ogre is sleeping and will not fight you this time.")
-            location = int(input("You may proceed to squares 2, 4, or 6. Which will it be? "))
+            while location != "2" and location != "4" and location != "6":
+                location = input("You may proceed to squares 2, 4, or 6. Which will it be? ")
             ogre_sleeping = False
     elif location == "2S":
         print("""
@@ -108,7 +110,10 @@ while location != "8":
                 location = input("Descend to 4 or brave the risky waters to 9? Type 4 or 9 ")
     elif location == "9":
         print("A programmer controls access to the gate to the meadow. He does not like you.")
-        your_choice = int(input("If you guess the number I am thinking of, I will program this gate to open. Type an integer from 1 to 3. "))
+        your_choice = "undefined"
+        while your_choice != "1" and your_choice != "2" and your_choice != "3":
+            your_choice = input("If you guess the number I am thinking of, I will program this gate to open. Type an integer from 1 to 3. ")
+        your_choice = int(your_choice)
         if your_choice == numberoftheday:
             print("Curses, should have chosen a different number today. Well, here you go.")
             location = "8"

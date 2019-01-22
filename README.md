@@ -15,8 +15,10 @@ You have set off a can of tear gas on a mob, angering them severely. They have c
   * Conversely, you may encounter situations where you can move further than 1 square.
 
 # Links
-- Google Slides: https://docs.google.com/presentation/d/1bwl0OQI7kM3JXOYQgF5Bt0nWeZpEnTidpLqihMTZCrg/edit?usp=sharing
-- Flow Chart: https://drive.google.com/file/d/11--DLpb82O_8wa2BSVGiQObgoGIaef2Q/view?usp=sharing
+- Google Slides: 
+  * https://docs.google.com/presentation/d/1bwl0OQI7kM3JXOYQgF5Bt0nWeZpEnTidpLqihMTZCrg/edit?usp=sharing
+- Flow Chart: 
+  * https://drive.google.com/file/d/11--DLpb82O_8wa2BSVGiQObgoGIaef2Q/view?usp=sharing
 
 # Citations
 - The only thing I used is a stock photo to create the background for my slides. Citation and link below:

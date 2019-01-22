@@ -19,6 +19,7 @@ You have set off a can of tear gas on a mob, angering them severely. They have c
 - Flow Chart: https://drive.google.com/file/d/11--DLpb82O_8wa2BSVGiQObgoGIaef2Q/view?usp=sharing
 
 # Citations
-- The only thing I used is a stock photo to create the background for my slides. Link below:
+- The only thing I used is a stock photo to create the background for my slides. Citation and link below:
+    * Tookapic. Forest Incredible Moody Rainy. 23 Jan. 2015.
     * https://www.pexels.com/photo/forest-incredible-mood-rainy-8782/
 - Everything else is my own work. Any similarities to any other work, copyrighted or otherwise, is coincidental.
